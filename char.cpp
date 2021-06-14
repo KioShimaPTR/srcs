@@ -5336,11 +5336,6 @@ bool CHARACTER::WarpSet(long x, long y, long lPrivateMapIndex)
 		lMapIndex = lPrivateMapIndex;
 	}
 
-#ifdef ENABLE_SHIP_WAR_SYSTEM
-	if (CShipWarManager::Instance().IsShipMap(GetMapIndex()) && CShipWarManager::Instance().IsShipWarActive())
-		CShipWarManager::Instance().DecMember(this);
-#endif
-
 	Stop();
 	Save();
 
